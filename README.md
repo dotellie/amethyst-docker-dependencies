@@ -1,1 +1,2 @@
-# A hacky way to get faster CI for Amethyst
+# Amethyst Docker Cache
+A hacky way to get faster CI for Amethyst
