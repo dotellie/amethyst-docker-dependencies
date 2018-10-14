@@ -1,0 +1,20 @@
+sudo: required
+
+services:
+- docker
+
+matrix:
+  include:
+  - os: linux
+    env: CHANNEL=stable
+  - os: linux
+    env: CHANNEL=beta
+  - os: linux
+    env: CHANNEL=nightly
+
+script:
+- docker build -t magnonellie/amethyst-docker-cache:$CHANNEL --build-arg CHANNEL=$CHANNEL .
+
+deploy:
+  provider: script
+  script: bash push.sh
