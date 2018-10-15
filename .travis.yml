@@ -5,14 +5,20 @@ language: minimal
 services:
 - docker
 
+os:
+- linux
+- windows
+
+env:
+- CHANNEL=stable
+- CHANNEL=beta
+- CHANNEL=nightly
+
 matrix:
-  include:
-  - os: linux
-    env: CHANNEL=stable
-  - os: linux
-    env: CHANNEL=beta
-  - os: linux
-    env: CHANNEL=nightly
+  fast_finish: true
+  allow_failures:
+  - env: CHANNEL=nightly
+
 
 script:
 - docker build -t magnonellie/amethyst-docker-cache:$CHANNEL --build-arg CHANNEL=$CHANNEL .
