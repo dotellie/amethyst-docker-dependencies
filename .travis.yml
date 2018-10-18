@@ -13,12 +13,6 @@ env:
 - CHANNEL=beta
 - CHANNEL=nightly
 
-matrix:
-  fast_finish: true
-  allow_failures:
-  - env: CHANNEL=nightly
-
-
 script:
 - docker build -t magnonellie/amethyst-dependencies:$CHANNEL --build-arg CHANNEL=$CHANNEL $TRAVIS_OS_NAME
 
