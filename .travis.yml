@@ -7,7 +7,6 @@ services:
 
 os:
 - linux
-# - windows
 
 env:
 - CHANNEL=stable
@@ -21,7 +20,7 @@ matrix:
 
 
 script:
-- docker build -t magnonellie/amethyst-docker-cache:$CHANNEL --build-arg CHANNEL=$CHANNEL $TRAVIS_OS_NAME
+- docker build -t magnonellie/amethyst-dependencies:$CHANNEL --build-arg CHANNEL=$CHANNEL $TRAVIS_OS_NAME
 
 deploy:
   provider: script

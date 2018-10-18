@@ -1,2 +1,2 @@
-# Amethyst Docker Cache
-A hacky way to get faster CI for Amethyst
+# Amethyst Docker Dependencies
+A base install image for building Amethyst with Concourse
