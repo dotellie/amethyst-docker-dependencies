@@ -1,7 +1,7 @@
 ARG CHANNEL
 ARG MDBOOK_RELEASE=0.2.1
 
-FROM rust:${CHANNEL}
+FROM rustdocker/rust:${CHANNEL}
 
 RUN apt-get update && apt-get install -y \
     git libasound2-dev libx11-xcb-dev libssl-dev cmake libfreetype6-dev libexpat1-dev libxcb1-dev \
