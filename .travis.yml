@@ -15,6 +15,12 @@ env:
 
 script:
 - docker build -t magnonellie/amethyst-dependencies:$CHANNEL --build-arg CHANNEL=$CHANNEL $TRAVIS_OS_NAME
+- |
+  if [ ${CHANNEL} == "stable" ]
+  then
+    docker tag magnonellie/amethyst-dependencies:$CHANNEL magnonellie/amethyst-dependencies:latest
+  fi
+
 
 deploy:
   provider: script
